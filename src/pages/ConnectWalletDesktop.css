@@ -1,0 +1,627 @@
+.nav-logo2 {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.rocketlaunch-icon6 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: none;
+}
+.button-div10 {
+  position: relative;
+  font-size: var(--base-body-space-mono-size);
+  line-height: 140%;
+  font-weight: 600;
+  font-family: var(--h2-work-sans);
+  color: var(--white);
+  text-align: center;
+  display: inline-block;
+}
+.connect-a-wallet4,
+.marketplace-div1 {
+  border-radius: var(--br-sm);
+  height: 46px;
+  flex-direction: row;
+  padding: 0 var(--padding-xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-sm);
+}
+.marketplace-div1 {
+  display: flex;
+}
+.connect-a-wallet4 {
+  display: none;
+}
+.user-icon2 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.nav-nav-menu2,
+.sign-up-div2 {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+}
+.sign-up-div2 {
+  border-radius: var(--br-sm);
+  background-color: var(--call-to-action);
+  height: 60px;
+  padding: 0 var(--padding-lg);
+  box-sizing: border-box;
+  justify-content: center;
+  gap: var(--gap-sm);
+}
+.nav-nav-menu2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  justify-content: flex-end;
+  gap: var(--gap-xs);
+}
+.frame-div14,
+.navigation-div2 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+.navigation-div2 {
+  background-color: var(--background);
+  width: 1000px;
+  flex-direction: row;
+  padding: var(--padding-xs) var(--padding-2xl);
+  justify-content: center;
+  gap: var(--gap-0);
+}
+.frame-div14 {
+  flex-direction: column;
+  padding: var(--padding-4xs) 0;
+  justify-content: flex-start;
+}
+.image-placeholder-icon11 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.connect-wallet-h1,
+.headline-h1 {
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+.connect-wallet-h1 {
+  flex: 1;
+  position: relative;
+  line-height: 110%;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+}
+.headline-h1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.choose-a-wallet-you-want-to-co {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  line-height: 160%;
+  display: inline-block;
+}
+.subhead-div1 {
+  align-self: stretch;
+  font-size: var(--h5-work-sans-size);
+}
+.headline-subhead4,
+.headline-subhead5,
+.subhead-div1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.headline-subhead5 {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.headline-subhead4 {
+  width: 460px;
+}
+.metamask-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.metamask-div1 {
+  flex: 1;
+  position: relative;
+  line-height: 140%;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+}
+.metamask-div {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--call-to-action);
+  box-sizing: border-box;
+  height: 72px;
+  flex-shrink: 0;
+  display: none;
+  flex-direction: row;
+  padding: 0 var(--padding-xs) 0 var(--padding-xl);
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  cursor: pointer;
+}
+.metamask-div2 {
+  flex: 1;
+  position: relative;
+  font-size: var(--h5-work-sans-size);
+  line-height: 140%;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: var(--h2-work-sans);
+  color: var(--white);
+  text-align: left;
+  display: inline-block;
+}
+.coinbase-button,
+.wallet-connect-button {
+  cursor: pointer;
+  border: 1px solid var(--call-to-action);
+  padding: 0 var(--padding-xs) 0 var(--padding-xl);
+  background-color: var(--background-secondary);
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  box-sizing: border-box;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.wallet-options-div {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  font-size: var(--h5-work-sans-size);
+}
+.connect-a-wallet5,
+.connect-wallet-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.connect-a-wallet5 {
+  flex: 1;
+  height: 602px;
+  flex-direction: column;
+  padding: 100px 0;
+  box-sizing: border-box;
+  gap: 40px;
+}
+.connect-wallet-section {
+  align-self: stretch;
+  background-color: var(--background);
+  flex-direction: row;
+  gap: 60px;
+}
+.logo-icon2 {
+  position: relative;
+  width: 243.41px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.nft-dashboard-p2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.all-your-needs2 {
+  margin: 0;
+}
+.join-our-community2,
+.nft-marketplace-ui-created-wit2 {
+  margin: 0;
+  position: relative;
+  line-height: 140%;
+  display: inline-block;
+  width: 238px;
+}
+.join-our-community2 {
+  height: 18px;
+  flex-shrink: 0;
+}
+.vector-icon14,
+.vector-icon15 {
+  position: absolute;
+  height: 9.38%;
+  width: 9.38%;
+  top: 51.56%;
+  right: 57.81%;
+  bottom: 39.06%;
+  left: 32.81%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon15 {
+  right: 32.81%;
+  left: 57.81%;
+}
+.vector-stroke-icon24,
+.vector-stroke-icon25,
+.vector-stroke-icon26,
+.vector-stroke-icon27 {
+  position: absolute;
+  height: 9.38%;
+  width: 48.13%;
+  top: 25%;
+  right: 25.94%;
+  bottom: 65.63%;
+  left: 25.94%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-stroke-icon25,
+.vector-stroke-icon26,
+.vector-stroke-icon27 {
+  top: 65.62%;
+  bottom: 25%;
+}
+.vector-stroke-icon26,
+.vector-stroke-icon27 {
+  height: 71.15%;
+  width: 39.78%;
+  top: 14.22%;
+  right: 3.15%;
+  bottom: 14.63%;
+  left: 57.07%;
+}
+.vector-stroke-icon27 {
+  right: 57.07%;
+  left: 3.15%;
+}
+.discordlogo-button2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.vector-icon18,
+.vector-stroke-icon32,
+.vector-stroke-icon33 {
+  position: absolute;
+  height: 31.25%;
+  width: 25%;
+  top: 34.38%;
+  right: 34.38%;
+  bottom: 34.37%;
+  left: 40.63%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon18,
+.vector-stroke-icon33 {
+  height: 68.44%;
+  width: 87.5%;
+  top: 15.78%;
+  right: 6.25%;
+  bottom: 15.78%;
+  left: 6.25%;
+}
+.vector-icon18 {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.vector-icon19,
+.vector-icon20,
+.vector-stroke-icon34,
+.vector-stroke-icon35 {
+  position: absolute;
+  height: 75%;
+  width: 85.38%;
+  top: 15.63%;
+  right: 3.13%;
+  bottom: 9.37%;
+  left: 11.5%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon20,
+.vector-stroke-icon34,
+.vector-stroke-icon35 {
+  height: 37.5%;
+  width: 37.5%;
+  top: 31.25%;
+  right: 31.25%;
+  bottom: 31.25%;
+  left: 31.25%;
+}
+.vector-icon20,
+.vector-stroke-icon35 {
+  height: 78.13%;
+  width: 78.13%;
+  top: 10.94%;
+  right: 10.94%;
+  bottom: 10.94%;
+  left: 10.94%;
+}
+.vector-icon20 {
+  height: 9.38%;
+  width: 9.38%;
+  top: 25%;
+  right: 25%;
+  bottom: 65.63%;
+  left: 65.63%;
+}
+.icons-div2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.additional-info-div34,
+.community-info-div2,
+.nft-marketplace-info2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-md);
+}
+.additional-info-div34,
+.nft-marketplace-info2 {
+  gap: var(--gap-xl);
+}
+.nft-marketplace-info2 {
+  width: 327.41px;
+  flex-shrink: 0;
+  padding: 0 var(--padding-4xl) 0 0;
+  box-sizing: border-box;
+  gap: var(--gap-3xl);
+  font-size: var(--base-body-space-mono-size);
+  color: var(--color-gray-100);
+  font-family: var(--h2-work-sans);
+}
+.explore-b {
+  position: relative;
+  line-height: 160%;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.connect-a-wallet6,
+.marketplace-div2 {
+  position: relative;
+  line-height: 140%;
+  display: inline-block;
+}
+.connect-a-wallet6 {
+  text-decoration: none;
+  color: inherit;
+}
+.explore-a,
+.pages-div2 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pages-div2 {
+  display: flex;
+  gap: var(--gap-xl);
+  font-size: var(--base-body-space-mono-size);
+  color: var(--color-gray-100);
+  font-family: var(--h2-work-sans);
+}
+.explore-a {
+  text-decoration: none;
+  width: 240px;
+  flex-shrink: 0;
+  display: none;
+  gap: var(--gap-2xl);
+  color: inherit;
+}
+.get-exclusive-promotions-upd2 {
+  position: relative;
+  line-height: 140%;
+  display: inline-block;
+  width: 330px;
+}
+.enter-your-email-here2 {
+  flex: 1;
+  position: relative;
+  line-height: 140%;
+  display: inline-block;
+}
+.button1,
+.subscribe-form-div2 {
+  border-radius: var(--br-sm);
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+.button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-2xl);
+  background-color: var(--call-to-action);
+  justify-content: flex-end;
+}
+.subscribe-form-div2 {
+  background-color: var(--white);
+  width: 420px;
+  flex-shrink: 0;
+  padding: var(--padding-2xs) 0 var(--padding-2xs) var(--padding-xs);
+  justify-content: flex-start;
+  color: var(--background);
+}
+.subscribe-div2 {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+}
+.footer-info-div2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.divider2 {
+  align-self: stretch;
+  position: relative;
+  border-top: 1px solid var(--caption-label-text);
+  box-sizing: border-box;
+  height: 1px;
+  flex-shrink: 0;
+}
+.nft-market-use-this-template2 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  line-height: 110%;
+  display: inline-block;
+}
+.frame-footer1 {
+  width: 1049.41px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--caption-space-mono-size);
+  color: var(--color-gray-100);
+  font-family: var(--h2-work-sans);
+}
+.connect-wallet-desktop,
+.footer-div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-div2 {
+  align-self: stretch;
+  background-color: var(--background-secondary);
+  padding: var(--padding-xl) var(--padding-5xl);
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: var(--gap-3xl);
+  font-size: var(--h5-work-sans-size);
+  font-family: var(--caption-space-mono);
+}
+.connect-wallet-desktop {
+  position: relative;
+  background-color: var(--background);
+  width: 100%;
+  height: 950px;
+  justify-content: space-between;
+  text-align: left;
+  font-size: var(--h2-work-sans-size);
+  color: var(--white);
+  font-family: var(--h2-work-sans);
+}
+@media screen and (max-width: 1200px) {
+  .nav-logo2 {
+    width: 450px;
+  }
+  .navigation-div2 {
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-logo2 {
+    width: 300px;
+  }
+  .navigation-div2 {
+    width: 600px;
+  }
+  .connect-a-wallet5,
+  .image-placeholder-icon11 {
+    flex: unset;
+    align-self: stretch;
+  }
+  .connect-a-wallet5 {
+    width: 700px;
+    flex-direction: row;
+    padding-left: var(--padding-2xl);
+    padding-top: var(--padding-2xl);
+    box-sizing: border-box;
+  }
+  .connect-wallet-section {
+    flex-direction: column;
+  }
+  .frame-footer1 {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .navigation-div2 {
+    width: 400px;
+  }
+  .connect-wallet-h1 {
+    font-size: var(--font-size-2xl);
+  }
+  .choose-a-wallet-you-want-to-co {
+    font-size: var(--font-size-sm);
+  }
+  .headline-subhead4 {
+    width: 260px;
+  }
+  .connect-a-wallet5 {
+    width: 400px;
+    flex-direction: column;
+    padding-left: 0;
+    box-sizing: border-box;
+  }
+  .frame-footer1 {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .nav-logo2 {
+    width: 60px;
+  }
+  .navigation-div2 {
+    width: 300px;
+  }
+}
