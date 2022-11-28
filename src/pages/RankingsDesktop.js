@@ -1,8 +1,39 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./RankingsDesktop.css";
 
 const RankingsDesktop = () => {
+ const options = {
+	method: 'GET',
+	headers: {
+    'Access-Control-Allow-Origin': '*',
+		'X-RapidAPI-Key': '9af57b7114mshb4e9f585f4b3977p1bef9djsna2d5678aeb56',
+		'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+	}
+};
+
+
+
+  const [coins, setCoins] = useState([])
+
+  const fetchData = () => {
+    fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0", options)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data.data.coins)
+        setCoins(data.data.coins)
+ 
+        console.log(coins)
+      })
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   const navigate = useNavigate();
 
   const onMarketplaceButtonClick = useCallback(() => {
@@ -36,7 +67,7 @@ const RankingsDesktop = () => {
       "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
     );
   }, []);
-
+ let i = 1;
   return (
     <div className="rankings-desktop-div">
       <div className="frame-div">
@@ -137,11 +168,12 @@ const RankingsDesktop = () => {
             </div>
           </div>
         </div>
-        <div className="table-items-div">
-          <div className="table-items-div1">
-            <div className="rank-artist1">
-              <div className="ranking-number-div">
-                <p className="p1">1</p>
+        {coins != [] > 0 && (coins.map(coin => (
+          <div className="table-items-div">
+          <div className="table-items-div3">
+            <div className="rank-artist2">
+              <div className="ranking-number-div2">
+                <p className="p1">{i}</p>
               </div>
               <div className="artist-card-div">
                 <div className="artist-avatar-div">
@@ -150,26 +182,26 @@ const RankingsDesktop = () => {
                       <img
                         className="avatar-placeholder-icon"
                         alt=""
-                        src="../avatar-placeholder@2x.png"
+                        src={coin.iconUrl}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="artist-info-div">
-                  <b className="dish-studio-b">Jaydon Ekstrom Bothman</b>
+                  <b className="dish-studio-b">{coin.name}</b>
                   <div className="additional-info-div">
                     <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
+                    <div className="eth-div">{coin.btcPrice}ETH</div>
                   </div>
                 </div>
                 <div className="ranking-number-div1">
-                  <div className="div4">1</div>
+                  <div className="div4">{i}</div>{i++}
                 </div>
               </div>
             </div>
             <div className="stats-div">
               <div className="change-div1">
-                <p className="change-p">+1.41%</p>
+                <p className="change-p">{coin.change}%</p>
               </div>
               <div className="nfts-sold-div">
                 <div className="nfts-sold-div1">602</div>
@@ -180,823 +212,9 @@ const RankingsDesktop = () => {
             </div>
           </div>
         </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">2</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder1@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Ruben Carder</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">3</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder2@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Alfredo Septimus</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">4</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder3@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Davis Franci</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">5</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder4@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Livia Rosser</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">6</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder5@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Kianna Donin</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">7</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder6@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Phillip Lipshutz</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">8</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder7@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Maria Rosser</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p1">9</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder8@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Kianna Stanton</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">10</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder9@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Angel Lubin</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">11</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder10@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Allison Torff</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">12</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder11@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Davis Workman</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">13</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder12@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Lindsey Lipshutz</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">14</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder13@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Randy Carder</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">15</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder14@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Lydia Culhane</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">16</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder15@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Rayna Bator</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">17</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder16@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Jocelyn Westervelt</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">18</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Marilyn Torff</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">19</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon6"
-                        alt=""
-                        src="../avatar-placeholder9@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Skylar Levin</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="table-items-div">
-          <div className="table-items-div3">
-            <div className="rank-artist2">
-              <div className="ranking-number-div2">
-                <p className="p19">20</p>
-              </div>
-              <div className="artist-card-div">
-                <div className="artist-avatar-div">
-                  <div className="avatar-div">
-                    <div className="asset-12-2">
-                      <img
-                        className="avatar-placeholder-icon"
-                        alt=""
-                        src="../avatar-placeholder2@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="artist-info-div">
-                  <b className="dish-studio-b">Terry Dorwart</b>
-                  <div className="additional-info-div">
-                    <div className="total-sales-div">Total Sales:</div>
-                    <div className="eth-div">34.53 ETH</div>
-                  </div>
-                </div>
-                <div className="ranking-number-div1">
-                  <div className="div4">1</div>
-                </div>
-              </div>
-            </div>
-            <div className="stats-div">
-              <div className="change-div1">
-                <p className="change-p">+1.41%</p>
-              </div>
-              <div className="nfts-sold-div">
-                <div className="nfts-sold-div1">602</div>
-              </div>
-              <div className="nfts-sold-div">
-                <p className="change-p">12.4 ETH</p>
-              </div>
-            </div>
-          </div>
-        </div>
+           
+          )))}
+
       </div>
       <div className="footer-div">
         <div className="footer-info-div">
