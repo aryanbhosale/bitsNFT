@@ -1,22 +1,60 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import "./ConnectWalletDesktop.css";
 
+// ID: 599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com
+// secret: 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
+
 const ConnectWalletDesktop = () => {
+
+  const [user, setUser] = useState({});
+
+  const handleCallbackResponse = (response) => {
+    console.log("Encoded JWT ID Token: ", response.credential);
+    var userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(user);
+  }
+
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: "599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com",
+      callback: handleCallbackResponse
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("sign-in-div"),
+      {theme: "outline", size: "large"}
+    )
+  }, []);  
+
+  const navigate = useNavigate();
+
+  const onRankingButtonClick = useCallback(() => {
+    navigate("/ranking");
+  }, [navigate]);
+
+  const onMarketplaceButtonClick = useCallback(() => {
+    navigate("/marketplace");
+  }, [navigate]);
+
   const onMetamaskContainerClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
 
   const onWalletConnectButtonClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
 
   const onCoinbaseButtonClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
 
@@ -40,7 +78,7 @@ const ConnectWalletDesktop = () => {
 
   const onButtonClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
 
@@ -87,41 +125,89 @@ const ConnectWalletDesktop = () => {
           alt=""
           src="../image-placeholder11@2x.png"
         />
-        <div className="connect-a-wallet5">
-          <div className="headline-subhead4">
-            <div className="headline-subhead5">
-              <h1 className="headline-h1">
-                <h1 className="connect-wallet-h1">Authenticate</h1>
-              </h1>
-              <div className="subhead-div1">
-                <p className="choose-a-wallet-you-want-to-co">
-                  Connect wallet and sign in to proceed
-                </p>
+        {user ? (
+            <div className="connect-a-wallet5">
+            <div className="headline-subhead4">
+              <div className="headline-subhead5">
+                <h1 className="headline-h1">
+                  <h1 className="connect-wallet-h1">Authenticate</h1>
+                </h1>
+                <div className="subhead-div1">
+                  <p className="choose-a-wallet-you-want-to-co">
+                    Sign In to proceed
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="wallet-options-div">
-            <div className="metamask-div" onClick={onMetamaskContainerClick}>
-              <img className="metamask-icon" alt="" src="../metamask.svg" />
-              <div className="metamask-div1">Metamask</div>
+            <div className="wallet-options-div">
+              <div className="metamask-div" onClick={onMetamaskContainerClick}>
+                <img className="metamask-icon" alt="" src="../metamask.svg" />
+                <div className="metamask-div1">Metamask</div>
+              </div>
+              {/* <button
+                className="wallet-connect-button"
+                onClick={onWalletConnectButtonClick}
+              >
+                <img
+                  className="metamask-icon"
+                  alt=""
+                  src="../walletconnect.svg"
+                />
+                <div className="metamask-div2">Connect Phantom</div>
+              </button> */}
+            
+              <div id="sign-in-div" className="metamask-div2">Google</div>
             </div>
-            <button
-              className="wallet-connect-button"
-              onClick={onWalletConnectButtonClick}
-            >
-              <img
-                className="metamask-icon"
-                alt=""
-                src="../walletconnect.svg"
-              />
-              <div className="metamask-div2">Connect Phantom</div>
+          </div>
+        ) : (
+          <>
+          <div className="connect-a-wallet5">
+          <div className="headline-subhead4">
+              <div className="headline-subhead5">
+                <h1 className="headline-h1">
+                  <h1 className="connect-wallet-h1">Congratulations</h1>
+                </h1>
+                <div className="subhead-div1">
+                  <p className="choose-a-wallet-you-want-to-co">
+                    You're Signed In as {user?.name}!🎉🎉🎉
+                  </p>
+                </div>
+              </div>
+            </div>
+          <div className="wallet-options-div">
+            <button className="wallet-connect-button" onClick={onMarketplaceButtonClick}>
+              <div className="marketplace-div1">
+                <img
+                  className="rocketlaunch-icon6"
+                  alt=""
+                  src="../rocketlaunch6.svg" />
+                <div className="button-div10">Marketplace</div>
+              </div>
             </button>
-            <button className="coinbase-button" onClick={onCoinbaseButtonClick}>
-              <img className="metamask-icon" alt="" src="../coinbase.svg" />
-              <div className="metamask-div2">Google</div>
+            <button className="wallet-connect-button" onClick={onRankingButtonClick}>
+                <div className="marketplace-div1">
+                  <img
+                    className="rocketlaunch-icon6"
+                    alt=""
+                    src="../rocketlaunch6.svg" />
+                  <div className="button-div10">Rankings</div>
+                </div>
+            </button>
+            <button className="wallet-connect-button" onClick={(e) => {
+              setUser({})
+            }}>
+              <div className="marketplace-div1">
+                <img
+                  className="rocketlaunch-icon6"
+                  alt=""
+                  src="../rocketlaunch6.svg" />
+                <div className="button-div10">Sign Out</div>
+              </div>
             </button>
           </div>
-        </div>
+          </div>
+            </>
+        )}
       </div>
       <div className="footer-div2">
         <div className="footer-info-div2">

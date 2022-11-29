@@ -36,7 +36,7 @@ const RankingsDesktop = () => {
   const navigate = useNavigate();
 
   const onMarketplaceButtonClick = useCallback(() => {
-    navigate("/marketplace-desktop");
+    navigate("/marketplace");
   }, [navigate]);
 
   const onDiscordLogoButtonClick = useCallback(() => {
@@ -63,7 +63,7 @@ const RankingsDesktop = () => {
 
   const onButtonContainerClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
  let i = 1;
@@ -167,8 +167,8 @@ const RankingsDesktop = () => {
             </div>
           </div>
         </div>
-        {coins != [] > 0 && (coins.map(coin => (
-          <div className="table-items-div">
+        {coins != [] > 0 && (coins.map((coin, key) => (
+          <div className="table-items-div" key={key}>
           <div className="table-items-div3">
             <div className="rank-artist2">
               <div className="ranking-number-div2">

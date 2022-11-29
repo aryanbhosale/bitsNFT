@@ -36,7 +36,7 @@ const MarketplaceDesktop = () => {
   const navigate = useNavigate();
 
   const onRankingsButtonClick = useCallback(() => {
-    navigate("/");
+    navigate("/ranking");
   }, [navigate]);
 
   const onDiscordLogoButtonClick = useCallback(() => {
@@ -58,12 +58,12 @@ const MarketplaceDesktop = () => {
   }, []);
 
   const onRankingsButton1Click = useCallback(() => {
-    navigate("/");
+    navigate("/ranking");
   }, [navigate]);
 
   const onButtonClick = useCallback(() => {
     window.open(
-      "https://www.animaapp.com/?utm_source=figma-samples&utm_campaign=figma-nftmarket&utm_medium=figma-samples"
+      ""
     );
   }, []);
 
