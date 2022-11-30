@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from 'jwt-decode';
 import "./ConnectWalletDesktop.css";
 
 // ID: 599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com
@@ -8,29 +9,8 @@ import "./ConnectWalletDesktop.css";
 
 const ConnectWalletDesktop = () => {
 
-  const [user, setUser] = useState({});
-
-  const handleCallbackResponse = (response) => {
-    console.log("Encoded JWT ID Token: ", response.credential);
-    var userObject = jwt_decode(response.credential);
-    console.log(userObject);
-    setUser(user);
-  }
-
-  useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: "599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    });
-
-    google.accounts.id.renderButton(
-      document.getElementById("sign-in-div"),
-      {theme: "outline", size: "large"}
-    )
-  }, []);  
-
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
 
   const onRankingButtonClick = useCallback(() => {
     navigate("/ranking");
@@ -125,8 +105,62 @@ const ConnectWalletDesktop = () => {
           alt=""
           src="../image-placeholder11@2x.png"
         />
-        {user ? (
+        
+        
+            
+        
+
+          {username !== '' ? (
+            <>
             <div className="connect-a-wallet5">
+          <div className="headline-subhead4">
+              <div className="headline-subhead5">
+                <h1 className="headline-h1">
+                  <h1 className="connect-wallet-h1">Congratulations</h1>
+                </h1>
+                <div className="subhead-div1">
+                  <p className="choose-a-wallet-you-want-to-co">
+                    You're Signed In as {username}!🎉🎉🎉
+                  </p>
+                </div>
+              </div>
+            </div>
+          <div className="wallet-options-div">
+            <button className="wallet-connect-button" onClick={onMarketplaceButtonClick}>
+              <div className="marketplace-div1">
+                <img
+                  className="rocketlaunch-icon6"
+                  alt=""
+                  src="../rocketlaunch6.svg" />
+                <div className="button-div10">Marketplace</div>
+              </div>
+            </button>
+            <button className="wallet-connect-button" onClick={onRankingButtonClick}>
+                <div className="marketplace-div1">
+                  <img
+                    className="rocketlaunch-icon6"
+                    alt=""
+                    src="../rocketlaunch6.svg" />
+                  <div className="button-div10">Rankings</div>
+                </div>
+            </button>
+            <button className="wallet-connect-button" onClick={(e) => {
+              setUsername("")
+            }}>
+              <div className="marketplace-div1">
+                <img
+                  className="rocketlaunch-icon6"
+                  alt=""
+                  src="../rocketlaunch6.svg" />
+                <div className="button-div10">Sign Out</div>
+              </div>
+            </button>
+          </div>
+          </div>
+            </>
+          ) : (
+            <>
+               <div className="connect-a-wallet5">
             <div className="headline-subhead4">
               <div className="headline-subhead5">
                 <h1 className="headline-h1">
@@ -155,59 +189,29 @@ const ConnectWalletDesktop = () => {
                 />
                 <div className="metamask-div2">Connect Phantom</div>
               </button> */}
-            
-              <div id="sign-in-div" className="metamask-div2">Google</div>
+
+              <GoogleLogin
+                onSuccess={credentialResponse => {
+                  console.log(credentialResponse.credential);
+                  const decoded = jwt_decode(credentialResponse.credential);
+                  setUsername(decoded.name);
+                  console.log("USER OBJECT : ", decoded);
+                }}
+                onError={() => {
+                  console.log("Couldn't Sign In"); 
+                }}
+              />
+
             </div>
           </div>
-        ) : (
-          <>
-          <div className="connect-a-wallet5">
-          <div className="headline-subhead4">
-              <div className="headline-subhead5">
-                <h1 className="headline-h1">
-                  <h1 className="connect-wallet-h1">Congratulations</h1>
-                </h1>
-                <div className="subhead-div1">
-                  <p className="choose-a-wallet-you-want-to-co">
-                    You're Signed In as {user?.name}!🎉🎉🎉
-                  </p>
-                </div>
-              </div>
-            </div>
-          <div className="wallet-options-div">
-            <button className="wallet-connect-button" onClick={onMarketplaceButtonClick}>
-              <div className="marketplace-div1">
-                <img
-                  className="rocketlaunch-icon6"
-                  alt=""
-                  src="../rocketlaunch6.svg" />
-                <div className="button-div10">Marketplace</div>
-              </div>
-            </button>
-            <button className="wallet-connect-button" onClick={onRankingButtonClick}>
-                <div className="marketplace-div1">
-                  <img
-                    className="rocketlaunch-icon6"
-                    alt=""
-                    src="../rocketlaunch6.svg" />
-                  <div className="button-div10">Rankings</div>
-                </div>
-            </button>
-            <button className="wallet-connect-button" onClick={(e) => {
-              setUser({})
-            }}>
-              <div className="marketplace-div1">
-                <img
-                  className="rocketlaunch-icon6"
-                  alt=""
-                  src="../rocketlaunch6.svg" />
-                <div className="button-div10">Sign Out</div>
-              </div>
-            </button>
-          </div>
-          </div>
+        
+
             </>
-        )}
+          )}
+          
+            
+
+      
       </div>
       <div className="footer-div2">
         <div className="footer-info-div2">
