@@ -1,10 +1,9 @@
 .marketplace-desktop-div{
   overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  
 }
 .nav-logo1 {
   max-width: 100%;
-  
   max-height: 100%;
   object-fit: cover;
 }
@@ -905,6 +904,25 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .nav-logo1 {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .frame-div7 {
+    width: 1459.41px;
+    height: 371px;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-4xs);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--h2-work-sans-size);
+  }
+  .browse-marketplace-h1{
+    margin-left: 6em;
+  }
   .browse-marketplace-h1,
   .frame-div8 {
     width: 650px;
@@ -928,8 +946,11 @@
   .nft-cards-row1 {
     width: 450px;
   }
+  .nft-marketplace-info1 {
+    margin-left: 9.4em;
+  }
   .frame-footer {
-    width: 700px;
+    width: 400px;
   }
 }
 @media screen and (max-width: 428px) {
@@ -966,6 +987,7 @@
 }
 @media screen and (max-width: 350px) {
   .browse-marketplace-h1 {
+    margin-left: 4em;
     font-weight: 600;
     font-family: var(--h2-work-sans);
     font-size: 18px;
@@ -973,9 +995,10 @@
     width: 190px;
   }
   .browse-through-more-than-50k-n {
-    font-size: 10px;
-    text-align: justify;
-    width: 100px;
+    font-size: 18px;
+    text-align: center;
+    width: fit-content;
+    margin-left: 10em;
   }
   .table-header-input {
     display: flex;
@@ -987,11 +1010,18 @@
   .nft-name-h3 {
     font-size: var(--font-size-lg);
   }
+  .nft-marketplace-info1 {
+    margin-left: -6em;
+  }
+  .explore-div1 {
+    margin-left: -4em;
+  }
   .footer-info-div1 {
     width: 70px;
   }
   .frame-footer {
-    width: 100px;
+    margin-left: -3em;
+    width: 250px;
   }
   .footer-div1 {
     width: 70px;

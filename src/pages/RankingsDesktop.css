@@ -924,11 +924,11 @@
   .headline-subhead,
   .navigation-div,
   .tabs-div {
-    width: 700px;
+    width: 400px;
   }
   .tabs-div {
     flex-direction: row;
-    padding-left: 350px;
+    padding-left: 3em;
     box-sizing: border-box;
   }
   .frame-div1 {
@@ -937,14 +937,26 @@
   .table-header-div,
   .table-headers-div,
   .table-items-div1 {
-    width: 700px;
+    width: 450px;
+  }
+  .stats-header-div {
+    width: 2.6em;
   }
   .table-items-div {
-    width: 730px;
+    width: 28em;
+  }
+  .rank-artist2 {
+    width: 20em;
   }
   .frame-div6,
   .table-items-div3 {
-    width: 700px;
+    width: 27em;
+  }
+  .footer-info-div {
+    width: 19em;
+  }
+  .frame-div6 {
+    width: 35em;
   }
 }
 @media screen and (max-width: 428px) {
@@ -964,34 +976,50 @@
   .headline-subhead {
     width: 400px;
   }
+  
   .tabs-div {
-    width: 300px;
-    padding-left: 0;
+    width: 14em;
+    margin-left: -4em;
     box-sizing: border-box;
   }
-  .p {
-    display: none;
-  }
+  
+
   .rank-artist,
   .table-headers-div {
-    padding-left: 220px;
+    width: 20em;
+    padding-left: 10px;
     box-sizing: border-box;
   }
-  .table-headers-div {
-    flex-direction: row;
-    padding-left: -80-;
-  }
-  .table-header-div {
-    width: 400px;
+  .table-header-div,
+  .table-headers-div,
+  .table-items-div1 {
+    width: 21.6em;
   }
   .ranking-number-div {
     display: none;
     padding-left: 0;
     box-sizing: border-box;
   }
-  .artist-info-div {
-    display: none;
+  .rank-artist2 {
+    width: 16em;
+    margin-left: 0.1em;
   }
+  .frame-div6,
+  .table-items-div3 {
+    width: 0em;
+    margin-left: -21em;
+  }
+  
+  .stats-header-div {
+    width: 2em;
+  } 
+  .rank-artist {
+    margin-left: 2em;
+  }
+  .p {
+    margin-left: -2.4em;
+  }
+  
   .rank-artist1,
   .table-items-div1 {
     padding-left: var(--padding-2xl);
@@ -1003,12 +1031,17 @@
   }
   .rankings-div1,
   .table-items-div {
-    width: 400px;
+    width: 22em;
+  }
+  .explore-div {
+    margin-top: 1em;
   }
   .footer-info-div {
     flex-direction: column;
+    width: 11em;
   }
   .frame-div6 {
-    width: 400px;
+    width: 25em;
+    margin-left: -2em;
   }
 }

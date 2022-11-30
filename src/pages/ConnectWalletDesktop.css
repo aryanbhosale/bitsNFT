@@ -1,3 +1,7 @@
+.connect-wallet-desktop {
+  overflow-x: hidden !important;
+  width: fit-content;
+}
 .nav-logo2 {
   max-width: 100%;
   overflow: hidden;
@@ -582,27 +586,41 @@
   }
   .connect-a-wallet5 {
     width: 700px;
-    flex-direction: row;
+    flex-direction: column;
     padding-left: var(--padding-2xl);
     padding-top: var(--padding-2xl);
     box-sizing: border-box;
+  }
+  .headline-h1 {
+    margin-left: -1em;
+  }
+  .wallet-options-div {
+    margin-left: -8.6em;
   }
   .connect-wallet-section {
     flex-direction: column;
   }
   .frame-footer1 {
-    width: 500px;
+    width: 34em;
   }
 }
 @media screen and (max-width: 428px) {
   .navigation-div2 {
-    width: 400px;
+    width: 7em;
+    margin-left: -1.6em;
   }
   .connect-wallet-h1 {
-    font-size: var(--font-size-2xl);
+    font-size: 0.6em;
+  }
+  .subhead-div1 {
+    margin-left: -2em;
   }
   .choose-a-wallet-you-want-to-co {
-    font-size: var(--font-size-sm);
+    font-size: 0.6em;
+  }
+  .wallet-connect-button {
+    width: 15em;
+    height: auto;
   }
   .headline-subhead4 {
     width: 260px;
@@ -613,15 +631,21 @@
     padding-left: 0;
     box-sizing: border-box;
   }
+  .wallet-options-div {
+    margin-left: -1em;
+    margin-top: 2em;
+  }
+  .divider2 {
+    width: 20em;
+  }
   .frame-footer1 {
-    width: 350px;
+    width: 22em;
+    margin-left: -5em;
   }
 }
 @media screen and (max-width: 350px) {
-  .nav-logo2 {
-    width: 60px;
-  }
+  
   .navigation-div2 {
-    width: 300px;
+    width: 7em;
   }
 }

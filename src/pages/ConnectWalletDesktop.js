@@ -120,7 +120,7 @@ const ConnectWalletDesktop = () => {
                 </h1>
                 <div className="subhead-div1">
                   <p className="choose-a-wallet-you-want-to-co">
-                    You're Signed In as {username}!🎉🎉🎉
+                    You're Signed In as {username}!🎉
                   </p>
                 </div>
               </div>
