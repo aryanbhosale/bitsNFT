@@ -180,12 +180,12 @@ const MarketplaceDesktop = () => {
                     </div>
                     <div className="additional-info-div21">
                       <div className="price-div">
-                        <div className="price-div1">Price</div>
-                        <div className="weth-div">1.63 ETH</div>
+                        <div className="price-div1">Currency</div>
+                        <div className="weth-div">ETH</div>
                       </div>
                       <div className="highest-bid-div">
-                        <div className="price-div1">Highest Bid</div>
-                        <div className="weth-div">0.33 wETH</div>
+                        <div className="price-div1">{' .'}</div>
+                        <div className="weth-div">BUY NOW</div>
                       </div>
                     </div>
                   </div>
@@ -231,12 +231,12 @@ const MarketplaceDesktop = () => {
                     </div>
                     <div className="additional-info-div21">
                       <div className="price-div">
-                        <div className="price-div1">Price</div>
-                        <div className="weth-div">1.63 ETH</div>
+                        <div className="price-div1">Currency</div>
+                        <div className="weth-div">ETH</div>
                       </div>
                       <div className="highest-bid-div">
-                        <div className="price-div1">Highest Bid</div>
-                        <div className="weth-div">0.33 wETH</div>
+                        <div className="price-div1">{' .'}</div>
+                        <div className="weth-div">BUY NOW</div>
                       </div>
                     </div>
                   </div>
@@ -283,12 +283,12 @@ const MarketplaceDesktop = () => {
                     </div>
                     <div className="additional-info-div21">
                       <div className="price-div">
-                        <div className="price-div1">Price</div>
-                        <div className="weth-div">1.63 ETH</div>
+                        <div className="price-div1">Currency</div>
+                        <div className="weth-div">ETH</div>
                       </div>
                       <div className="highest-bid-div">
-                        <div className="price-div1">Highest Bid</div>
-                        <div className="weth-div">0.33 wETH</div>
+                        <div className="price-div1">{' .'}</div>
+                        <div className="weth-div">BUY NOW</div>
                       </div>
                     </div>
                   </div>
@@ -334,12 +334,12 @@ const MarketplaceDesktop = () => {
                     </div>
                     <div className="additional-info-div21">
                       <div className="price-div">
-                        <div className="price-div1">Price</div>
-                        <div className="weth-div">1.63 ETH</div>
+                        <div className="price-div1">Currency</div>
+                        <div className="weth-div">ETH</div>
                       </div>
                       <div className="highest-bid-div">
-                        <div className="price-div1">Highest Bid</div>
-                        <div className="weth-div">0.33 wETH</div>
+                        <div className="price-div1">{' .'}</div>
+                        <div className="weth-div">BUY NOW</div>
                       </div>
                     </div>
                   </div>
