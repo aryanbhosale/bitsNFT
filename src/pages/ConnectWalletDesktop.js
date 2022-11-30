@@ -191,6 +191,7 @@ const ConnectWalletDesktop = () => {
               </button> */}
 
               <GoogleLogin
+                clientId={"146789437340-qmb6nbg9c0qvi5n25m9htohkg8et6qro.apps.googleusercontent.com"}
                 onSuccess={credentialResponse => {
                   console.log(credentialResponse.credential);
                   const decoded = jwt_decode(credentialResponse.credential);
