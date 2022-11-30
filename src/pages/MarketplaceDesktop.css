@@ -1,9 +1,10 @@
 .marketplace-desktop-div{
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
 .nav-logo1 {
   max-width: 100%;
-  overflow: hidden;
+  
   max-height: 100%;
   object-fit: cover;
 }
