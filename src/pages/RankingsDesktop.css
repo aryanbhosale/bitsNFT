@@ -1,3 +1,6 @@
+.rankings-desktop-div{
+  overflow-x: hidden !important;
+}
 .nav-logo {
   max-width: 100%;
   overflow: hidden;

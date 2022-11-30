@@ -1,3 +1,6 @@
+.marketplace-desktop-div{
+  overflow-x: hidden !important;
+}
 .nav-logo1 {
   max-width: 100%;
   overflow: hidden;
