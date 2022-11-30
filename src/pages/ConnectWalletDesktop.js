@@ -201,6 +201,7 @@ const ConnectWalletDesktop = () => {
                 onError={() => {
                   console.log("Couldn't Sign In"); 
                 }}
+                cookiePolicy={'single_host_origin'}
               />
 
             </div>
