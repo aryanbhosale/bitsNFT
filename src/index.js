@@ -10,7 +10,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <GoogleOAuthProvider clientId="599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com">
+  <GoogleOAuthProvider clientId="146789437340-qmb6nbg9c0qvi5n25m9htohkg8et6qro.apps.googleusercontent.com">
     <BrowserRouter>
       <App />
     </BrowserRouter>

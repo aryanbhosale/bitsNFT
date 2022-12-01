@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from 'jwt-decode';
+import { gapi } from "gapi-script";
 import "./ConnectWalletDesktop.css";
 
-// ID: 599883682302-8lrnl418o8k16bqs4dihi2qk7luctqr8.apps.googleusercontent.com
-// secret: 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
+// ID: http://508499376584-d3n4419lugf82510kvb01rk04e3qtteo.apps.googleusercontent.com/
 
 const ConnectWalletDesktop = () => {
 
@@ -201,7 +201,6 @@ const ConnectWalletDesktop = () => {
                 onError={() => {
                   console.log("Couldn't Sign In"); 
                 }}
-                cookiePolicy={'single_host_origin'}
               />
 
             </div>
