@@ -6,13 +6,13 @@ const MarketplaceDesktop = () => {
   const [nfts, setNfts] = useState([]);
 
   const options = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "X-RapidAPI-Key": "9af57b7114mshb4e9f585f4b3977p1bef9djsna2d5678aeb56",
-      "X-RapidAPI-Host": "opensea13.p.rapidapi.com",
-    },
+      'X-RapidAPI-Key': 'b0f9d59354mshcc670bb672c7ab1p10265fjsn1790ebc1f9e0',
+      'X-RapidAPI-Host': 'opensea13.p.rapidapi.com'
+    }
   };
-
+  
   const fetchData = () => {
     fetch(
       "https://opensea13.p.rapidapi.com/assets?order_direction=desc&limit=12&include_orders=false",
