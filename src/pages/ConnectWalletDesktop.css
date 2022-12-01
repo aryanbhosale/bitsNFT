@@ -579,10 +579,17 @@
   .navigation-div2 {
     width: 600px;
   }
+  .connect-wallet-h1 {
+    font-size: 0.7em;
+  }
   .connect-a-wallet5,
   .image-placeholder-icon11 {
     flex: unset;
     align-self: stretch;
+  }
+  .choose-a-wallet-you-want-to-co {
+    font-size: 0.8em;
+    margin-left: -3em;
   }
   .connect-a-wallet5 {
     width: 700px;
@@ -595,7 +602,7 @@
     margin-left: -1em;
   }
   .wallet-options-div {
-    margin-left: -8.6em;
+    margin-left: -11em;
   }
   .connect-wallet-section {
     flex-direction: column;

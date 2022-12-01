@@ -956,6 +956,8 @@
 @media screen and (max-width: 428px) {
   .browse-marketplace-h1 {
     width: 300px;
+    font-size: 0.7em;
+    margin-left: 2em;
   }
   .browse-through-more-than-50k-n {
     font-size: var(--font-size-sm);
@@ -976,6 +978,9 @@
   .nft-cards-row,
   .nft-cards-row1 {
     width: 300px;
+  }
+  .nft-marketplace-info1 {
+    margin-left: 0em;
   }
   .footer-info-div1 {
     width: 250px;
