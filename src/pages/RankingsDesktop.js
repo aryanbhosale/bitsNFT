@@ -58,7 +58,7 @@ const RankingsDesktop = () => {
   }, []);
 
   const onMarketplaceButton1Click = useCallback(() => {
-    navigate("/marketplace-desktop");
+    navigate("/marketplace");
   }, [navigate]);
 
   const onButtonContainerClick = useCallback(() => {
